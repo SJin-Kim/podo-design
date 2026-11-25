@@ -1,0 +1,135 @@
+# 포도알 UI (src/ui)
+
+> 자동 생성 — 직접 고치지 않는다. `design/tokens.json`·`src/ui/docs.mjs` 를 고치고 `node design/gen-agent-docs.mjs`.
+> 그림이 있는 문서: https://sjin-kim.github.io/podo-design/
+
+## 규칙
+
+- 화면 코드는 색·글자·버튼을 `src/ui` 에서만 가져온다: `import { Button, Text, color, space, radius } from '../ui'`.
+- hex 를 직접 쓰지 않는다. 가장 가까운 역할 토큰을 고르고, 없으면 `design/tokens.json` 에 먼저 추가한다.
+- props 이름은 Astryx 규칙: `label`(필수, 화면 낭독 이름 겸용) · `variant` · `size` · `isDisabled` · `isLoading` · `onPress`.
+- 누를 수 있는 것은 모두 투명도 0.7 로 반응하고, 누름은 모양만 바꾼다(크기·배치 그대로). 비활성은 눌림 표시도 없다.
+- 비활성(isDisabled)과 진행 중(isLoading)은 다르게 보인다. 진행 중엔 크기를 유지하고 다시 눌러도 한 번만 실행한다.
+- 상태의 뜻은 색이 없어도 전해져야 한다 — 배지·오류에는 글자나 아이콘을 함께.
+- 손가락이 닿는 영역은 44pt 이상(작은 아이콘은 hitSlop).
+- 뒤로 가기는 맨 위 대화상자·시트 하나만 닫는다. 꼭 답해야 하는 대화상자는 바깥을 눌러도 닫히지 않는다.
+
+## 색 (라이트, `color.<이름>`)
+
+- `grape` #5c3ead — 브랜드 보라 (PODO.primary)
+- `onGrape` #ffffff — grape 위의 글자·아이콘
+- `grapeWash` #ede9f8 — ON 배지 바탕 (StatusBadge on)
+- `grapeTint` #f5f2fb — 보라 기운의 넓은 바탕: 리포트·티켓 영역 띠
+- `grapeSoft` #dcceff — 캘린더의 지난·비활성 달 등 연한 보라 면
+- `grapeDeep` #653c9a — 공연 포스터 배경색(performance.배경색)이 없을 때의 기본 배경
+- `onGrapeDeep` #ffffff — grape-deep 위의 글자
+- `surface` #ffffff — 화면 기본 배경, 카드, 모달
+- `surfaceSunken` #fafafa — 입력칸·통계 원형 그래프 안쪽·묶음 박스 배경
+- `surfaceMuted` #f0f0f0 — 큰 카드(radius-14)의 회색 바탕, 스켈레톤
+- `fillInput` #ebebeb — 검색창 바탕 (PODO.searchFill)
+- `divider` #f5f5f5 — 섹션 사이 8px 회색 띠 (SectionDivider, PODO.divider)
+- `rowLine` #f8f8f8 — 목록 행 사이 1px 선 (PODO.rowLine)
+- `posterBorder` rgba(189, 189, 189, 0.2) — 포스터·프로필 사진 테두리 1px (Poster)
+- `placeholder` #c1c1c2 — 사진이 아직 없을 때의 회색 자리표시(옛 화면)
+- `scrim` rgba(0, 0, 0, 0.5) — 모달·바텀시트 뒤 어둡게 깔리는 막
+- `textTitle` #1e1e1e — 섹션 제목·화면 제목 (PODO.title)
+- `textBody` #000000 — 목록 항목 제목·본문 (PODO.text)
+- `textSecondary` #757575 — 날짜·장소·'전체보기' 같은 작은 보조 글자 (PODO.date)
+- `textTertiary` #999999 — 공연 종류 라벨, OFF 배지 글자, 비활성 아이콘 (PODO.sub)
+- `iconOff` #c4c4c4 — 체크 OFF 아이콘 테두리 (check-off-24)
+- `danger` #c03f2f — D-day 배지 글자, 오류·삭제 (PODO.red)
+- `dangerWash` #f7e8e6 — D-day 배지 바탕
+- `orange` #ff8a00 — '예정' 배지 글자 (StatusBadge upcoming)
+- `orangeWash` #fff1e0 — '예정' 배지 바탕
+- `neutralWash` #f2f1f1 — OFF 배지 바탕
+- `link` #0a84ff — iOS 시스템 파랑
+- `star` #efb146 — 별점 채움
+
+## 글자 (`<Text variant>`)
+
+- `display` 24 · 700 — 연간 결산·리포트의 큰 제목
+- `section-title` 20/26 · 700 — 섹션 제목 (SectionTitle)
+- `title` 18 · 700 — 모달·시트 제목 (textStyles.title)
+- `subtitle` 16 · 600 — 카드 제목 (textStyles.subtitle)
+- `list-title` 15/26 · 500 — 목록 항목의 작품명 (titleTextStyle)
+- `body` 14 · 400 — 본문 기본 (textStyles.body)
+- `type-label` 13/26 · 400 — 작품 종류 라벨 (typeLabelStyle)
+- `link-small` 12/15 · 400 — '전체보기' 링크 (MoreLink), 보조 라벨 (textStyles.small)
+- `badge` 11/16 · 500 — 상태 배지 글자 (StatusBadge)
+- `micro` 10 · 500 — 캘린더 날짜 칸
+
+## 간격 `space`: 2 · 4 · 6 · 8 · 10 · 12 · 16 · 18 · 20 · 24  ·  둥글기 `radius`: 4 · 5 · 8 · 10 · 12 · 14 · full
+
+## 컴포넌트
+
+### Button (버튼)
+
+누르면 무언가 일어나는 곳. 화면 이동만 한다면 링크를 쓴다.
+
+Props: `label`: string · `variant?`: 'primary' | 'secondary' | 'ghost' | 'destructive' = 'secondary' · `size?`: 'sm' | 'md' | 'lg' = 'md' · `isDisabled?`: boolean = false · `isLoading?`: boolean = false · `icon?`: ReactNode · `width?`: number | '100%' · `onPress?`: () => void
+이렇게: primary 는 한 화면(한 묶음)에 하나만. / 할 일을 동사로: "저장", "멤버십 보기", "티켓북 만들기". / 시간이 걸리는 일은 isLoading 으로 진행 중임을 보인다. / 되돌릴 수 없는 일은 destructive + 확인 대화상자.
+하지 않기: primary 두 개를 나란히 둔다. / "확인", "OK" 처럼 무엇을 하는지 모르는 글자. / 버튼으로 화면 이동만 한다. / 비활성과 로딩을 같은 모양으로 보인다.
+접근성: 글자 대비 4.5:1 · 아이콘만 있을 때 3:1 · 역할 accessibilityRole='button' · 비활성 알림 accessibilityState.disabled · 진행 중 알림 accessibilityState.busy · 터치 크기 높이 36 이상
+
+### IconButton (아이콘 버튼)
+
+아이콘만 있는 버튼. 손가락이 닿는 영역은 늘 44pt 이상.
+
+Props: `label`: string · `icon`: ReactNode · `size?`: number = 44 · `isDisabled?`: boolean = false · `onPress?`: () => void
+이렇게: 누구나 아는 아이콘만 — 더보기(⋮), 닫기, 검색, 추가. / label 은 하는 일로: "더보기", "티켓북 메뉴".
+하지 않기: 뜻이 애매한 아이콘을 글자 없이 쓴다. / 보이는 크기만큼만 눌리게 둔다.
+접근성: 아이콘 대비 3:1 · 이름 accessibilityLabel · 터치 크기 44 × 44pt
+
+### Text (글자)
+
+모든 글자. variant 가 크기·굵기·줄 높이를, color 가 역할 색을 고른다.
+
+Props: `variant?`: 'display' | 'section-title' | 'title' | 'subtitle' | 'list-title' | 'body' | 'type-label' | 'link-small' | 'badge' | 'micro' = 'body' · `color?`: ColorToken = 'textBody' · `align?`: 'left' | 'center' | 'right'
+이렇게: 읽어야 하는 작은 글자는 textSecondary (4.6:1). / 바로 옆 단계와는 크기나 굵기가 눈에 띄게 다르게.
+하지 않기: textTertiary 로 링크나 본문을 쓴다 (2.8:1). / fontSize 를 숫자로 직접 준다.
+접근성: 본문 대비 4.5:1 · 비활성 글자 기준 없음
+
+### Badge (배지)
+
+상태를 짧게. 색만으로 말하지 않고 늘 글자를 함께 쓴다.
+
+Props: `label`: string · `tone?`: 'brand' | 'neutral' | 'warning' | 'danger' = 'neutral'
+이렇게: 예외인 것에만 붙인다. / 색과 함께 글자로 뜻을 말한다 ("예정", "D-3").
+하지 않기: 모든 행에 같은 배지를 붙여 아무것도 눈에 안 띄게 한다.
+접근성: 글자 대비 4.5:1 · 색 말고도 글자 필수
+
+### Divider (구분선)
+
+목록 행 사이의 선(hairline)과 섹션 사이의 8pt 띠(section).
+
+Props: `variant?`: 'hairline' | 'section' = 'hairline' · `inset?`: number = 0
+이렇게: 카드로 감싸기 전에 간격으로 먼저 묶는다.
+하지 않기: 선을 두껍게 하거나 색을 바꿔 강조한다.
+접근성: 장식 기준 없음
+
+### Spinner (로딩)
+
+불러오는 중. 색은 grape 하나.
+
+Props: `size?`: 'small' | 'large' = 'large' · `color?`: ColorToken = 'grape' · `overlay?`: boolean = false · `fill?`: boolean = false · `label?`: string = '불러오는 중'
+이렇게: 버튼 하나의 일이면 화면을 덮지 말고 버튼의 isLoading 으로.
+하지 않기: 불러오는 동안 화면 배치가 흔들리게 둔다.
+접근성: 표시 대비 3:1 · 움직임 없이도 accessibilityLabel
+
+### Dialog (대화상자)
+
+앱의 모든 알림 상자. 폭 270, 뒤에 scrim. 취소는 보통 굵기, 확인은 굵게, 되돌릴 수 없는 일만 빨강.
+
+Props: `visible`: boolean · `title`: string · `message?`: string · `actions`: { label, variant?: 'cancel' | 'default' | 'primary' | 'destructive', onPress? }[] · `onDismiss?`: () => void
+이렇게: 확인만 있을 땐 primary(보라). / 삭제는 결과를 그대로: "복구할 수 없습니다". / 뒤로 가기는 맨 위 대화상자 하나만 닫는다.
+하지 않기: 버튼에 바탕색을 칠한다. / 다른 모달 위에서 띄워야 하는데 Dialog 를 쓴다 — 그땐 시스템 Alert.alert.
+접근성: 글자 대비 4.5:1 · 역할 accessibilityRole='alert' · 닫기 뒤로 가기 = 취소
+
+### Toast (토스트)
+
+끝난 일을 짧게 알린다. 모양은 회색 알약 하나 — 성공·오류는 색이 아니라 문구로.
+
+Props: `text1`: string · `text2?`: string · `type?`: 'success' | 'error' | 'info' | 'warning'
+이렇게: 한 줄로, 무엇이 끝났는지.
+하지 않기: 다음 할 일을 토스트로만 알린다 — 사라진다. / 되돌릴 수 없는 일의 확인을 토스트로.
+접근성: 글자 대비 4.5:1 · 알림 accessibilityLiveRegion='polite'

@@ -112,9 +112,9 @@ Props: `variant?`: 'hairline' | 'section' = 'hairline' · `inset?`: number = 0
 
 ### Spinner (로딩)
 
-로딩은 이것 하나 — 첫 화면 fill(모양을 알면 Skeleton), 저장·전송 중 overlay(옅은 veil 막 + 가운데), 작은 자리 size="small", 버튼은 Button isLoading. fill·overlay 는 스크롤 밖에 둔다.
+포도알 마크(티켓·반원·원)가 차례로 튀는 로딩, 이것 하나 — 첫 화면 <Spinner fill visible={loading}>{() => 내용}</Spinner>(모양을 알면 Skeleton), 저장·전송 중 <Spinner overlay visible={saving} />(옅은 veil 막 + 흰 판 위 마크), 작은 자리 size="small", 버튼은 Button isLoading. 0.12초 안에 끝나면 안 보이고, 보이면 0.5초는 머문다. 조건으로 붙였다 떼지 말고 visible 로. fill·overlay 는 스크롤 밖.
 
-Props: `size?`: 'small' | 'large' = 'large' · `color?`: ColorToken = 'grape' · `overlay?`: boolean = false · `fill?`: boolean = false · `label?`: string = '불러오는 중'
+Props: `size?`: 'small' | 'large' = 'large' · `color?`: ColorToken = 'grape' · `overlay?`: boolean = false · `fill?`: boolean = false · `visible?`: boolean = true · `children?`: () => ReactNode · `label?`: string = '불러오는 중'
 이렇게: 버튼 하나의 일이면 화면을 덮지 말고 버튼의 isLoading 으로.
 하지 않기: 불러오는 동안 화면 배치가 흔들리게 둔다.
 접근성: 표시 대비 3:1 · 움직임 없이도 accessibilityLabel

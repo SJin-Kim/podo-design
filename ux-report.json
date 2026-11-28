@@ -34,6 +34,12 @@
    "exceptions": "서비스 종료·기간 만료, 사용자 영향 설명(해지·적용), 민감한 정보 수집 안내는 수동형도 돼요."
   },
   {
+   "id": "spacing",
+   "level": "should",
+   "title": "띄어쓰기 하나로",
+   "guide": "\"해 주세요\"처럼 보조 동사는 띄우고, \"공연 중인\"의 \"중\"은 띄어 쓴다 — 화면마다 다르게 쓰지 않는다."
+  },
+  {
    "id": "negative",
    "level": "should",
    "title": "긍정형으로 말하기",
@@ -42,544 +48,76 @@
   }
  ],
  "counts": {
-  "haeyo": 80,
+  "haeyo": 0,
   "doeeoyo": 0,
-  "dialog-cancel": 23,
-  "honorific": 9,
-  "passive": 10,
-  "negative": 30
+  "dialog-cancel": 0,
+  "honorific": 0,
+  "passive": 2,
+  "spacing": 0,
+  "negative": 15
  },
  "findings": [
   {
-   "rule": "dialog-cancel",
-   "file": "src/components/CSVPreviewModal.tsx",
-   "line": 437,
-   "text": "취소",
-   "fix": "닫기"
-  },
-  {
-   "rule": "haeyo",
-   "file": "src/components/CSVTicketEditModal.tsx",
-   "line": 492,
-   "text": "이미 등록된 배우입니다",
-   "fix": "이미 등록된 배우예요"
-  },
-  {
-   "rule": "haeyo",
-   "file": "src/components/CSVTicketEditModal.tsx",
-   "line": 721,
-   "text": "공연명은 필수입니다",
-   "fix": "공연명은 필수예요"
-  },
-  {
-   "rule": "haeyo",
-   "file": "src/components/CSVTicketEditModal.tsx",
-   "line": 724,
-   "text": "타입은 필수입니다",
-   "fix": "타입은 필수예요"
-  },
-  {
-   "rule": "dialog-cancel",
-   "file": "src/components/CSVTicketEditModal.tsx",
-   "line": 765,
-   "text": "취소",
-   "fix": "닫기"
-  },
-  {
-   "rule": "dialog-cancel",
-   "file": "src/components/CSVTicketEditModal.tsx",
-   "line": 1289,
-   "text": "취소",
-   "fix": "닫기"
-  },
-  {
-   "rule": "dialog-cancel",
-   "file": "src/components/CustomAlert.tsx",
-   "line": 22,
-   "text": "취소",
-   "fix": "닫기"
-  },
-  {
    "rule": "negative",
    "file": "src/components/photoCrop/PhotoCropper.tsx",
-   "line": 182,
+   "line": 180,
    "text": "사진을 열 수 없어요",
    "fix": null
   },
   {
-   "rule": "dialog-cancel",
-   "file": "src/components/photoCrop/PhotoCropper.tsx",
-   "line": 465,
-   "text": "취소",
-   "fix": "닫기"
-  },
-  {
-   "rule": "dialog-cancel",
-   "file": "src/hooks/useCustomAlert.tsx",
-   "line": 97,
-   "text": "취소",
-   "fix": "닫기"
-  },
-  {
-   "rule": "haeyo",
+   "rule": "negative",
    "file": "src/screens/LoginPage.tsx",
-   "line": 74,
-   "text": "로그인에 실패했습니다. 잠시 후 다시 시도해주세요.",
-   "fix": "로그인에 실패했어요. 잠시 후 다시 시도해주세요."
-  },
-  {
-   "rule": "haeyo",
-   "file": "src/screens/LoginPage.tsx",
-   "line": 284,
-   "text": "서버 응답이 늦어지고 있습니다. 잠시 후 다시 시도해주세요.",
-   "fix": "서버 응답이 늦어지고 있어요. 잠시 후 다시 시도해주세요."
-  },
-  {
-   "rule": "haeyo",
-   "file": "src/screens/LoginPage.tsx",
-   "line": 286,
-   "text": "서버에 연결할 수 없습니다.  와이파이나 모바일 데이터 연결을 확인한 뒤 다시 시도해주세요.",
-   "fix": "서버에 연결할 수 없어요.  와이파이나 모바일 데이터 연결을 확인한 뒤 다시 시도해주세요."
+   "line": 271,
+   "text": "서버에 연결할 수 없어요.  와이파이나 모바일 데이터 연결을 확인한 뒤 다시 시도해 주세요.",
+   "fix": null
   },
   {
    "rule": "negative",
    "file": "src/screens/LoginPage.tsx",
-   "line": 286,
-   "text": "서버에 연결할 수 없습니다.  와이파이나 모바일 데이터 연결을 확인한 뒤 다시 시도해주세요.",
+   "line": 273,
+   "text": "지금 서버를 점검하고 있어서 잠시 서비스를 쓸 수 없어요. 불편을 드려 죄송해요. 더 안정적인 서비스로 곧 돌아올게요.",
    "fix": null
-  },
-  {
-   "rule": "haeyo",
-   "file": "src/screens/LoginPage.tsx",
-   "line": 288,
-   "text": "현재 서버 점검으로 서비스 이용이 일시 중단됩니다. 이용에 불편을 드려 죄송합니다. 빠른 시간 내 더욱 안정적인 서비스를 제공할 수 있도록 노력하겠습니다.",
-   "fix": "현재 서버 점검으로 서비스 이용이 일시 중단돼요. 이용에 불편을 드려 죄송해요. 빠른 시간 내 더욱 안정적인 서비스를 제공할 수 있도록 노력하겠어요."
-  },
-  {
-   "rule": "haeyo",
-   "file": "src/screens/LoginPage.tsx",
-   "line": 343,
-   "text": "로그인 정보가 만료되었습니다. 다시 로그인해주세요.",
-   "fix": "로그인 정보가 만료됐어요. 다시 로그인해주세요."
-  },
-  {
-   "rule": "haeyo",
-   "file": "src/screens/LoginPage.tsx",
-   "line": 347,
-   "text": "회원가입에 실패했습니다.",
-   "fix": "회원가입에 실패했어요."
-  },
-  {
-   "rule": "negative",
-   "file": "src/screens/MainPageComponents/AccountComponents/AccountScreen.tsx",
-   "line": 158,
-   "text": "닉네임 사용 불가",
-   "fix": null
-  },
-  {
-   "rule": "haeyo",
-   "file": "src/screens/MainPageComponents/AccountComponents/AccountScreen.tsx",
-   "line": 158,
-   "text": "해당 닉네임은 사용이 불가능합니다.",
-   "fix": "해당 닉네임은 사용이 불가능해요."
-  },
-  {
-   "rule": "negative",
-   "file": "src/screens/MainPageComponents/AccountComponents/AccountScreen.tsx",
-   "line": 158,
-   "text": "해당 닉네임은 사용이 불가능합니다.",
-   "fix": null
-  },
-  {
-   "rule": "haeyo",
-   "file": "src/screens/MainPageComponents/AccountComponents/AccountScreen.tsx",
-   "line": 194,
-   "text": "프로필이 수정되었습니다.",
-   "fix": "프로필을 수정했어요."
-  },
-  {
-   "rule": "haeyo",
-   "file": "src/screens/MainPageComponents/AccountComponents/AccountScreen.tsx",
-   "line": 211,
-   "text": "프로필 수정 중 오류가 발생했습니다.",
-   "fix": "프로필 수정 중 오류가 발생했어요."
-  },
-  {
-   "rule": "haeyo",
-   "file": "src/screens/MainPageComponents/AccountComponents/AccountScreen.tsx",
-   "line": 213,
-   "text": "이미 존재하는 닉네임입니다.",
-   "fix": "이미 존재하는 닉네임이에요."
-  },
-  {
-   "rule": "haeyo",
-   "file": "src/screens/MainPageComponents/AccountComponents/AccountScreen.tsx",
-   "line": 215,
-   "text": "인증이 만료되었습니다. 다시 로그인해주세요.",
-   "fix": "인증이 만료됐어요. 다시 로그인해주세요."
-  },
-  {
-   "rule": "haeyo",
-   "file": "src/screens/MainPageComponents/AccountComponents/AccountScreen.tsx",
-   "line": 217,
-   "text": "서버 오류입니다. 잠시 후 다시 시도해주세요.",
-   "fix": "서버 오류예요. 잠시 후 다시 시도해주세요."
-  },
-  {
-   "rule": "haeyo",
-   "file": "src/screens/MainPageComponents/AccountComponents/Modals/Alarm.tsx",
-   "line": 42,
-   "text": "그래도 서비스 알림을 받지 않겠습니까?",
-   "fix": "그래도 서비스 알림을 받지 않겠습니까?"
-  },
-  {
-   "rule": "haeyo",
-   "file": "src/screens/MainPageComponents/AccountComponents/Modals/Customer.tsx",
-   "line": 135,
-   "text": "문의하기는 로그인 후 이용 가능합니다.",
-   "fix": "문의하기는 로그인 후 이용 가능해요."
-  },
-  {
-   "rule": "haeyo",
-   "file": "src/screens/MainPageComponents/AccountComponents/Modals/Customer.tsx",
-   "line": 140,
-   "text": "등록이 완료 되었습니다.",
-   "fix": "등록이 완료 됐어요."
-  },
-  {
-   "rule": "haeyo",
-   "file": "src/screens/MainPageComponents/AccountComponents/Modals/Customer.tsx",
-   "line": 218,
-   "text": "* 문의 내용에 욕설, 성희롱 등의 내용이 포함된 경우 상담이 제한될 수 있습니다.",
-   "fix": "* 문의 내용에 욕설, 성희롱 등의 내용이 포함된 경우 상담이 제한될 수 있어요."
-  },
-  {
-   "rule": "haeyo",
-   "file": "src/screens/MainPageComponents/AccountComponents/Modals/Customer.tsx",
-   "line": 396,
-   "text": "원활한 문의 접수 및 상담을 위해 이메일, 단말 기기 정보 등 개인정보가 수집됩니다.",
-   "fix": "원활한 문의 접수 및 상담을 위해 이메일, 단말 기기 정보 등 개인정보가 수집돼요."
-  },
-  {
-   "rule": "haeyo",
-   "file": "src/screens/MainPageComponents/AccountComponents/Modals/Customer.tsx",
-   "line": 414,
-   "text": "수집된 개인정보는 문의 상담 외 다른 용도로 사용되지 않습니다.",
-   "fix": "수집된 개인정보는 문의 상담 외 다른 용도로 사용되지 않아요."
-  },
-  {
-   "rule": "haeyo",
-   "file": "src/screens/MainPageComponents/AccountComponents/Modals/Customer.tsx",
-   "line": 432,
-   "text": "수집된 개인정보는 회원 탈퇴 시점 또는 관련 법령(소비자의 불만 또는 분쟁처리에 관한 기록 3년)에 근거한 기간 동안 보관 후 삭제됩니다.",
-   "fix": "수집된 개인정보는 회원 탈퇴 시점 또는 관련 법령(소비자의 불만 또는 분쟁처리에 관한 기록 3년)에 근거한 기간 동안 보관 후 삭제돼요."
-  },
-  {
-   "rule": "haeyo",
-   "file": "src/screens/MainPageComponents/AccountComponents/Modals/CustomerList.tsx",
-   "line": 201,
-   "text": "운영자의 답변을 기다리는 중입니다",
-   "fix": "운영자의 답변을 기다리는 중이에요"
-  },
-  {
-   "rule": "haeyo",
-   "file": "src/screens/MainPageComponents/AccountComponents/Modals/CustomerList.tsx",
-   "line": 280,
-   "text": "안녕하세요. 포도알 관리자입니다.",
-   "fix": "안녕하세요. 포도알 관리자예요."
-  },
-  {
-   "rule": "negative",
-   "file": "src/screens/MainPageComponents/AccountComponents/Modals/CustomerList.tsx",
-   "line": 355,
-   "text": "문의 이력이 없어요",
-   "fix": null
-  },
-  {
-   "rule": "haeyo",
-   "file": "src/screens/MainPageComponents/AccountComponents/Modals/MyAccounts.tsx",
-   "line": 39,
-   "text": "정말 로그아웃 하시겠습니까?",
-   "fix": "정말 로그아웃 할까요?"
-  },
-  {
-   "rule": "honorific",
-   "file": "src/screens/MainPageComponents/AccountComponents/Modals/MyAccounts.tsx",
-   "line": 39,
-   "text": "정말 로그아웃 하시겠습니까?",
-   "fix": "정말 로그아웃 할까요?"
-  },
-  {
-   "rule": "dialog-cancel",
-   "file": "src/screens/MainPageComponents/AccountComponents/Modals/MyAccounts.tsx",
-   "line": 48,
-   "text": "취소",
-   "fix": "닫기"
-  },
-  {
-   "rule": "haeyo",
-   "file": "src/screens/MainPageComponents/AccountComponents/Modals/MyAccounts.tsx",
-   "line": 58,
-   "text": "한번 더 확인해주세요! 기록된 모든 내용이 삭제되며, 삭제된 내용은 복구되지 않습니다.",
-   "fix": "한번 더 확인해주세요! 기록된 모든 내용이 삭제되며, 삭제된 내용은 복구되지 않아요."
-  },
-  {
-   "rule": "dialog-cancel",
-   "file": "src/screens/MainPageComponents/AccountComponents/Modals/MyAccounts.tsx",
-   "line": 67,
-   "text": "취소",
-   "fix": "닫기"
-  },
-  {
-   "rule": "haeyo",
-   "file": "src/screens/MainPageComponents/AccountComponents/Modals/ShowFavorites.tsx",
-   "line": 228,
-   "text": "찜한 공연이 없습니다",
-   "fix": "찜한 공연이 없어요"
-  },
-  {
-   "rule": "negative",
-   "file": "src/screens/MainPageComponents/AccountComponents/Modals/ShowFavorites.tsx",
-   "line": 228,
-   "text": "찜한 공연이 없습니다",
-   "fix": null
-  },
-  {
-   "rule": "haeyo",
-   "file": "src/screens/MainPageComponents/AccountComponents/Modals/ShowFavorites.tsx",
-   "line": 275,
-   "text": "찜한 배우가 없습니다",
-   "fix": "찜한 배우가 없어요"
-  },
-  {
-   "rule": "negative",
-   "file": "src/screens/MainPageComponents/AccountComponents/Modals/ShowFavorites.tsx",
-   "line": 275,
-   "text": "찜한 배우가 없습니다",
-   "fix": null
-  },
-  {
-   "rule": "haeyo",
-   "file": "src/screens/MainPageComponents/AccountComponents/Setting.tsx",
-   "line": 36,
-   "text": "현재 버전이 최신 버전입니다.",
-   "fix": "현재 버전이 최신 버전이에요."
-  },
-  {
-   "rule": "haeyo",
-   "file": "src/screens/MainPageComponents/CalendarComponents/CalendarScreen.tsx",
-   "line": 183,
-   "text": "이미지를 삭제하면 기본 이미지가 표시됩니다. 정말 삭제하시겠어요?",
-   "fix": "이미지를 삭제하면 기본 이미지가 표시돼요. 정말 삭제할까요?"
-  },
-  {
-   "rule": "honorific",
-   "file": "src/screens/MainPageComponents/CalendarComponents/CalendarScreen.tsx",
-   "line": 183,
-   "text": "이미지를 삭제하면 기본 이미지가 표시됩니다. 정말 삭제하시겠어요?",
-   "fix": "이미지를 삭제하면 기본 이미지가 표시돼요. 정말 삭제할까요?"
-  },
-  {
-   "rule": "dialog-cancel",
-   "file": "src/screens/MainPageComponents/CalendarComponents/CalendarScreen.tsx",
-   "line": 207,
-   "text": "취소",
-   "fix": "닫기"
-  },
-  {
-   "rule": "haeyo",
-   "file": "src/screens/MainPageComponents/HomeComponents/Detail/ReviewTicket.tsx",
-   "line": 615,
-   "text": "리뷰 신고가 접수되었습니다.",
-   "fix": "리뷰 신고가 접수됐어요."
-  },
-  {
-   "rule": "haeyo",
-   "file": "src/screens/MainPageComponents/HomeComponents/Detail/ShowPerformance.tsx",
-   "line": 97,
-   "text": "공연 정보가 존재하지 않습니다",
-   "fix": "공연 정보가 존재하지 않아요"
-  },
-  {
-   "rule": "haeyo",
-   "file": "src/screens/MainPageComponents/HomeComponents/Detail/ShowPerformance.tsx",
-   "line": 128,
-   "text": "공연 정보가 존재하지 않습니다",
-   "fix": "공연 정보가 존재하지 않아요"
-  },
-  {
-   "rule": "haeyo",
-   "file": "src/screens/MainPageComponents/HomeComponents/Detail/ShowPerformance.tsx",
-   "line": 753,
-   "text": "리뷰 신고가 접수되었습니다.",
-   "fix": "리뷰 신고가 접수됐어요."
-  },
-  {
-   "rule": "haeyo",
-   "file": "src/screens/MainPageComponents/HomeComponents/Detail/ShowPlace.tsx",
-   "line": 58,
-   "text": "클립보드에 복사되었습니다.",
-   "fix": "클립보드에 복사했어요."
   },
   {
    "rule": "passive",
-   "file": "src/screens/MainPageComponents/HomeComponents/Detail/ShowPlace.tsx",
-   "line": 58,
-   "text": "클립보드에 복사되었습니다.",
-   "fix": "클립보드에 복사했어요."
-  },
-  {
-   "rule": "haeyo",
-   "file": "src/screens/MainPageComponents/HomeComponents/Detail/ShowPlace.tsx",
-   "line": 138,
-   "text": "공연장 설명이 없습니다.",
-   "fix": "공연장 설명이 없어요."
+   "file": "src/screens/LoginPage.tsx",
+   "line": 327,
+   "text": "로그인 정보가 만료됐어요. 다시 로그인해 주세요.",
+   "fix": "로그인 정보가 만료됐어요. 다시 로그인해 주세요."
   },
   {
    "rule": "negative",
-   "file": "src/screens/MainPageComponents/HomeComponents/Detail/ShowPlace.tsx",
-   "line": 138,
-   "text": "공연장 설명이 없습니다.",
+   "file": "src/screens/MainPageComponents/AccountComponents/AccountScreen.tsx",
+   "line": 156,
+   "text": "빈 칸이나 자음·모음만으로는 닉네임을 만들 수 없어요.",
    "fix": null
   },
   {
-   "rule": "haeyo",
-   "file": "src/screens/MainPageComponents/HomeComponents/HomePage.tsx",
-   "line": 616,
-   "text": "알림 권한이 없어 모든 알람이 해제되었습니다.",
-   "fix": "알림 권한이 없어 모든 알람이 해제됐어요."
-  },
-  {
-   "rule": "haeyo",
-   "file": "src/screens/MainPageComponents/HomeComponents/HomePage.tsx",
-   "line": 735,
-   "text": "티켓 오픈까지 5분도 남지 않았습니다.",
-   "fix": "티켓 오픈까지 5분도 남지 않았어요."
-  },
-  {
-   "rule": "haeyo",
-   "file": "src/screens/MainPageComponents/HomeComponents/HomePage.tsx",
-   "line": 767,
-   "text": "알람을 저장하지 못했습니다. 잠시 후 다시 시도해주세요.",
-   "fix": "알람을 저장하지 못했어요. 잠시 후 다시 시도해주세요."
-  },
-  {
-   "rule": "haeyo",
-   "file": "src/screens/MainPageComponents/HomeComponents/HomePage.tsx",
-   "line": 772,
-   "text": "알람을 설정하지 못했습니다. 잠시 후 다시 시도해주세요.",
-   "fix": "알람을 설정하지 못했어요. 잠시 후 다시 시도해주세요."
-  },
-  {
-   "rule": "haeyo",
-   "file": "src/screens/MainPageComponents/HomeComponents/HomePage.tsx",
-   "line": 795,
-   "text": "백그라운드에서도 정확한 시간에 알람을 받으려면 '정확한 알람 허용' 권한이 필요합니다.  설정으로 이동하시겠습니까?",
-   "fix": "백그라운드에서도 정확한 시간에 알람을 받으려면 '정확한 알람 허용' 권한이 필요해요.  설정으로 이동할까요?"
-  },
-  {
-   "rule": "honorific",
-   "file": "src/screens/MainPageComponents/HomeComponents/HomePage.tsx",
-   "line": 795,
-   "text": "백그라운드에서도 정확한 시간에 알람을 받으려면 '정확한 알람 허용' 권한이 필요합니다.  설정으로 이동하시겠습니까?",
-   "fix": "백그라운드에서도 정확한 시간에 알람을 받으려면 '정확한 알람 허용' 권한이 필요해요.  설정으로 이동할까요?"
-  },
-  {
-   "rule": "haeyo",
-   "file": "src/screens/MainPageComponents/HomeComponents/HomePage.tsx",
-   "line": 820,
-   "text": "알림 권한을 확인하지 못했습니다. 잠시 후 다시 시도해주세요.",
-   "fix": "알림 권한을 확인하지 못했어요. 잠시 후 다시 시도해주세요."
-  },
-  {
-   "rule": "haeyo",
-   "file": "src/screens/MainPageComponents/HomeComponents/HomePage.tsx",
-   "line": 908,
-   "text": "… 백그라운드 테스트입니다",
-   "fix": "… 백그라운드 테스트예요"
-  },
-  {
-   "rule": "haeyo",
-   "file": "src/screens/MainPageComponents/HomeComponents/HomePage.tsx",
-   "line": 909,
-   "text": "… 티켓오픈 …분 전입니다!",
-   "fix": "… 티켓오픈 …분 전이에요!"
-  },
-  {
-   "rule": "haeyo",
-   "file": "src/screens/MainPageComponents/HomeComponents/HomePage.tsx",
-   "line": 1015,
-   "text": "알림 설정을 바꾸지 못했습니다. 잠시 후 다시 시도해주세요.",
-   "fix": "알림 설정을 바꾸지 못했어요. 잠시 후 다시 시도해주세요."
-  },
-  {
-   "rule": "haeyo",
-   "file": "src/screens/MainPageComponents/HomeComponents/HomePage.tsx",
-   "line": 1127,
-   "text": "티켓 오픈 예정인 작품이 없습니다.",
-   "fix": "티켓 오픈 예정인 작품이 없어요."
+   "rule": "passive",
+   "file": "src/screens/MainPageComponents/AccountComponents/AccountScreen.tsx",
+   "line": 212,
+   "text": "로그인이 만료됐어요. 다시 로그인해 주세요.",
+   "fix": "로그인이 만료됐어요. 다시 로그인해 주세요."
   },
   {
    "rule": "negative",
-   "file": "src/screens/MainPageComponents/HomeComponents/HomePage.tsx",
-   "line": 1127,
-   "text": "티켓 오픈 예정인 작품이 없습니다.",
+   "file": "src/screens/MainPageComponents/AccountComponents/Modals/MyAccounts.tsx",
+   "line": 54,
+   "text": "기록한 내용이 모두 지워지고, 지운 내용은 되돌릴 수 없어요.",
    "fix": null
   },
   {
-   "rule": "haeyo",
-   "file": "src/screens/MainPageComponents/HomeComponents/HomePage.tsx",
-   "line": 1146,
-   "text": "현재 공연중인 작품이 없습니다.",
-   "fix": "현재 공연중인 작품이 없어요."
-  },
-  {
    "rule": "negative",
-   "file": "src/screens/MainPageComponents/HomeComponents/HomePage.tsx",
-   "line": 1146,
-   "text": "현재 공연중인 작품이 없습니다.",
+   "file": "src/screens/MainPageComponents/HomeComponents/Detail/ShowPerformance.tsx",
+   "line": 81,
+   "text": "공연 정보를 찾을 수 없어요",
    "fix": null
   },
   {
-   "rule": "haeyo",
-   "file": "src/screens/MainPageComponents/HomeComponents/HomePage.tsx",
-   "line": 1169,
-   "text": "개막 예정인 작품이 없습니다.",
-   "fix": "개막 예정인 작품이 없어요."
-  },
-  {
    "rule": "negative",
-   "file": "src/screens/MainPageComponents/HomeComponents/HomePage.tsx",
-   "line": 1169,
-   "text": "개막 예정인 작품이 없습니다.",
-   "fix": null
-  },
-  {
-   "rule": "haeyo",
-   "file": "src/screens/MainPageComponents/ReportComponents/TopActors.tsx",
-   "line": 117,
-   "text": "관람한 배우가 없습니다.",
-   "fix": "관람한 배우가 없어요."
-  },
-  {
-   "rule": "negative",
-   "file": "src/screens/MainPageComponents/ReportComponents/TopActors.tsx",
-   "line": 117,
-   "text": "관람한 배우가 없습니다.",
-   "fix": null
-  },
-  {
-   "rule": "haeyo",
-   "file": "src/screens/MainPageComponents/ReportComponents/TopPerformances.tsx",
-   "line": 116,
-   "text": "관람한 작품이 없습니다.",
-   "fix": "관람한 작품이 없어요."
-  },
-  {
-   "rule": "negative",
-   "file": "src/screens/MainPageComponents/ReportComponents/TopPerformances.tsx",
-   "line": 116,
-   "text": "관람한 작품이 없습니다.",
+   "file": "src/screens/MainPageComponents/HomeComponents/Detail/ShowPerformance.tsx",
+   "line": 111,
+   "text": "공연 정보를 찾을 수 없어요",
    "fix": null
   },
   {
@@ -590,529 +128,53 @@
    "fix": null
   },
   {
-   "rule": "haeyo",
-   "file": "src/screens/MainPageComponents/SearchComponents/ActorDetail.tsx",
-   "line": 102,
-   "text": "좋아요 처리에 실패했습니다",
-   "fix": "좋아요 처리에 실패했어요"
-  },
-  {
-   "rule": "haeyo",
-   "file": "src/screens/MainPageComponents/SearchComponents/ActorDetail.tsx",
-   "line": 234,
-   "text": "배우 정보를 찾을 수 없습니다.",
-   "fix": "배우 정보를 찾을 수 없어요."
-  },
-  {
    "rule": "negative",
-   "file": "src/screens/MainPageComponents/SearchComponents/ActorDetail.tsx",
-   "line": 234,
-   "text": "배우 정보를 찾을 수 없습니다.",
+   "file": "src/screens/MainPageComponents/TicketBookComponents/ChangeTicket.tsx",
+   "line": 891,
+   "text": "삭제하면 되돌릴 수 없어요.",
    "fix": null
   },
   {
-   "rule": "haeyo",
-   "file": "src/screens/MainPageComponents/SearchComponents/ActorDetail.tsx",
-   "line": 330,
-   "text": "출연작품이 없습니다.",
-   "fix": "출연작품이 없어요."
-  },
-  {
    "rule": "negative",
-   "file": "src/screens/MainPageComponents/SearchComponents/ActorDetail.tsx",
-   "line": 330,
-   "text": "출연작품이 없습니다.",
-   "fix": null
-  },
-  {
-   "rule": "haeyo",
-   "file": "src/screens/MainPageComponents/TicketBookComponents/ChangeTicket.tsx",
-   "line": 303,
-   "text": "캐스팅을 업데이트했습니다!",
-   "fix": "캐스팅을 업데이트했어요!"
-  },
-  {
-   "rule": "honorific",
-   "file": "src/screens/MainPageComponents/TicketBookComponents/ChangeTicket.tsx",
-   "line": 941,
-   "text": "잠깐! 삭제된 티켓은 복구되지 않아요. 정말 삭제하시겠어요?",
-   "fix": "잠깐! 삭제된 티켓은 복구되지 않아요. 정말 삭제할까요?"
-  },
-  {
-   "rule": "dialog-cancel",
-   "file": "src/screens/MainPageComponents/TicketBookComponents/ChangeTicket.tsx",
-   "line": 950,
-   "text": "취소",
-   "fix": "닫기"
-  },
-  {
-   "rule": "haeyo",
-   "file": "src/screens/MainPageComponents/TicketBookComponents/ChangeTicket.tsx",
-   "line": 960,
-   "text": "티켓이 저장되지 않았습니다.",
-   "fix": "티켓이 저장되지 않았어요."
-  },
-  {
-   "rule": "haeyo",
-   "file": "src/screens/MainPageComponents/TicketBookComponents/ChangeTicket.tsx",
-   "line": 961,
-   "text": "수정을 그만두겠습니까?",
-   "fix": "수정을 그만두겠습니까?"
-  },
-  {
-   "rule": "dialog-cancel",
-   "file": "src/screens/MainPageComponents/TicketBookComponents/ChangeTicket.tsx",
-   "line": 983,
-   "text": "취소",
-   "fix": "닫기"
-  },
-  {
-   "rule": "passive",
-   "file": "src/screens/MainPageComponents/TicketBookComponents/ChangeTicket.tsx",
-   "line": 1006,
-   "text": "티켓 삭제가 완료되었어요!",
-   "fix": "티켓을 삭제했어요!"
-  },
-  {
-   "rule": "passive",
-   "file": "src/screens/MainPageComponents/TicketBookComponents/ChangeTicket.tsx",
-   "line": 1013,
-   "text": "티켓 수정이 완료되었어요!",
-   "fix": "티켓을 수정했어요!"
-  },
-  {
-   "rule": "dialog-cancel",
-   "file": "src/screens/MainPageComponents/TicketBookComponents/ChangeTicket.tsx",
-   "line": 1063,
-   "text": "취소",
-   "fix": "닫기"
-  },
-  {
-   "rule": "haeyo",
-   "file": "src/screens/MainPageComponents/TicketBookComponents/ChangeTicket.tsx",
-   "line": 2476,
-   "text": "이미 등록된 배우입니다",
-   "fix": "이미 등록된 배우예요"
-  },
-  {
-   "rule": "dialog-cancel",
-   "file": "src/screens/MainPageComponents/TicketBookComponents/ChangeTicket.tsx",
-   "line": 2588,
-   "text": "취소",
-   "fix": "닫기"
-  },
-  {
-   "rule": "haeyo",
-   "file": "src/screens/MainPageComponents/TicketBookComponents/EditTicketBooks.tsx",
-   "line": 89,
-   "text": "안에 있는 티켓 …개도 함께 삭제되며, 삭제한 티켓북과 티켓은 복구할 수 없습니다. 정말 삭제하시겠습니까?",
-   "fix": "안에 있는 티켓 …개도 함께 삭제되며, 삭제한 티켓북과 티켓은 복구할 수 없어요. 정말 삭제할까요?"
-  },
-  {
-   "rule": "honorific",
-   "file": "src/screens/MainPageComponents/TicketBookComponents/EditTicketBooks.tsx",
-   "line": 89,
-   "text": "안에 있는 티켓 …개도 함께 삭제되며, 삭제한 티켓북과 티켓은 복구할 수 없습니다. 정말 삭제하시겠습니까?",
-   "fix": "안에 있는 티켓 …개도 함께 삭제되며, 삭제한 티켓북과 티켓은 복구할 수 없어요. 정말 삭제할까요?"
-  },
-  {
-   "rule": "negative",
-   "file": "src/screens/MainPageComponents/TicketBookComponents/EditTicketBooks.tsx",
-   "line": 89,
-   "text": "안에 있는 티켓 …개도 함께 삭제되며, 삭제한 티켓북과 티켓은 복구할 수 없습니다. 정말 삭제하시겠습니까?",
-   "fix": null
-  },
-  {
-   "rule": "haeyo",
-   "file": "src/screens/MainPageComponents/TicketBookComponents/EditTicketBooks.tsx",
-   "line": 90,
-   "text": "삭제한 티켓북은 복구할 수 없습니다. 정말 삭제하시겠습니까?",
-   "fix": "삭제한 티켓북은 복구할 수 없어요. 정말 삭제할까요?"
-  },
-  {
-   "rule": "honorific",
-   "file": "src/screens/MainPageComponents/TicketBookComponents/EditTicketBooks.tsx",
-   "line": 90,
-   "text": "삭제한 티켓북은 복구할 수 없습니다. 정말 삭제하시겠습니까?",
-   "fix": "삭제한 티켓북은 복구할 수 없어요. 정말 삭제할까요?"
-  },
-  {
-   "rule": "negative",
-   "file": "src/screens/MainPageComponents/TicketBookComponents/EditTicketBooks.tsx",
-   "line": 90,
-   "text": "삭제한 티켓북은 복구할 수 없습니다. 정말 삭제하시겠습니까?",
-   "fix": null
-  },
-  {
-   "rule": "dialog-cancel",
    "file": "src/screens/MainPageComponents/TicketBookComponents/EditTicketBooks.tsx",
    "line": 91,
-   "text": "취소",
-   "fix": "닫기"
-  },
-  {
-   "rule": "haeyo",
-   "file": "src/screens/MainPageComponents/TicketBookComponents/EditTicketBooks.tsx",
-   "line": 262,
-   "text": "…개의 티켓북이 삭제되었습니다.",
-   "fix": "…개의 티켓북을 삭제했어요."
-  },
-  {
-   "rule": "passive",
-   "file": "src/screens/MainPageComponents/TicketBookComponents/EditTicketBooks.tsx",
-   "line": 262,
-   "text": "…개의 티켓북이 삭제되었습니다.",
-   "fix": "…개의 티켓북을 삭제했어요."
-  },
-  {
-   "rule": "haeyo",
-   "file": "src/screens/MainPageComponents/TicketBookComponents/MakeTicket.tsx",
-   "line": 753,
-   "text": "이동하시겠습니까?",
-   "fix": "이동할까요?"
-  },
-  {
-   "rule": "honorific",
-   "file": "src/screens/MainPageComponents/TicketBookComponents/MakeTicket.tsx",
-   "line": 753,
-   "text": "이동하시겠습니까?",
-   "fix": "이동할까요?"
-  },
-  {
-   "rule": "dialog-cancel",
-   "file": "src/screens/MainPageComponents/TicketBookComponents/MakeTicket.tsx",
-   "line": 762,
-   "text": "취소",
-   "fix": "닫기"
-  },
-  {
-   "rule": "dialog-cancel",
-   "file": "src/screens/MainPageComponents/TicketBookComponents/MakeTicket.tsx",
-   "line": 787,
-   "text": "취소",
-   "fix": "닫기"
-  },
-  {
-   "rule": "haeyo",
-   "file": "src/screens/MainPageComponents/TicketBookComponents/MakeTicket.tsx",
-   "line": 894,
-   "text": "티켓이 정상적으로 생성되었습니다.",
-   "fix": "티켓을 만들었어요."
-  },
-  {
-   "rule": "passive",
-   "file": "src/screens/MainPageComponents/TicketBookComponents/MakeTicket.tsx",
-   "line": 894,
-   "text": "티켓이 정상적으로 생성되었습니다.",
-   "fix": "티켓을 만들었어요."
-  },
-  {
-   "rule": "haeyo",
-   "file": "src/screens/MainPageComponents/TicketBookComponents/MakeTicket.tsx",
-   "line": 938,
-   "text": "티켓이 정상적으로 생성되었습니다.",
-   "fix": "티켓을 만들었어요."
-  },
-  {
-   "rule": "passive",
-   "file": "src/screens/MainPageComponents/TicketBookComponents/MakeTicket.tsx",
-   "line": 938,
-   "text": "티켓이 정상적으로 생성되었습니다.",
-   "fix": "티켓을 만들었어요."
-  },
-  {
-   "rule": "haeyo",
-   "file": "src/screens/MainPageComponents/TicketBookComponents/MakeTicket.tsx",
-   "line": 1102,
-   "text": "검색 결과가 없습니다",
-   "fix": "검색 결과가 없어요"
-  },
-  {
-   "rule": "negative",
-   "file": "src/screens/MainPageComponents/TicketBookComponents/MakeTicket.tsx",
-   "line": 1102,
-   "text": "검색 결과가 없습니다",
+   "text": "안에 있는 티켓 …개도 함께 삭제돼요. 삭제하면 티켓북과 티켓을 되돌릴 수 없어요.",
    "fix": null
   },
   {
-   "rule": "dialog-cancel",
-   "file": "src/screens/MainPageComponents/TicketBookComponents/MakeTicket.tsx",
-   "line": 2790,
-   "text": "취소",
-   "fix": "닫기"
-  },
-  {
-   "rule": "haeyo",
-   "file": "src/screens/MainPageComponents/TicketBookComponents/MakeTicket.tsx",
-   "line": 3016,
-   "text": "이미 등록된 배우입니다",
-   "fix": "이미 등록된 배우예요"
-  },
-  {
-   "rule": "passive",
-   "file": "src/screens/MainPageComponents/TicketBookComponents/ShowTickets.tsx",
-   "line": 101,
-   "text": "티켓 삭제가 완료되었어요!",
-   "fix": "티켓을 삭제했어요!"
-  },
-  {
-   "rule": "passive",
-   "file": "src/screens/MainPageComponents/TicketBookComponents/ShowTickets.tsx",
-   "line": 108,
-   "text": "이미지 변경이 완료되었어요!",
-   "fix": "이미지를 바꿨어요!"
-  },
-  {
-   "rule": "passive",
-   "file": "src/screens/MainPageComponents/TicketBookComponents/ShowTickets.tsx",
-   "line": 115,
-   "text": "티켓 이동이 완료되었어요!",
-   "fix": "티켓을 옮겼어요!"
-  },
-  {
-   "rule": "haeyo",
-   "file": "src/screens/MainPageComponents/TicketBookComponents/ShowTickets.tsx",
-   "line": 329,
-   "text": "CSV 파일만 선택 가능합니다",
-   "fix": "CSV 파일만 선택 가능해요"
-  },
-  {
-   "rule": "haeyo",
-   "file": "src/screens/MainPageComponents/TicketBookComponents/ShowTickets.tsx",
-   "line": 493,
-   "text": "변환 가능한 티켓이 없습니다",
-   "fix": "변환 가능한 티켓이 없어요"
-  },
-  {
    "rule": "negative",
-   "file": "src/screens/MainPageComponents/TicketBookComponents/ShowTickets.tsx",
-   "line": 493,
-   "text": "변환 가능한 티켓이 없습니다",
+   "file": "src/screens/MainPageComponents/TicketBookComponents/EditTicketBooks.tsx",
+   "line": 92,
+   "text": "삭제하면 티켓북을 되돌릴 수 없어요.",
    "fix": null
   },
   {
-   "rule": "haeyo",
-   "file": "src/screens/MainPageComponents/TicketBookComponents/ShowTickets.tsx",
-   "line": 565,
-   "text": "…개의 경고가 있습니다",
-   "fix": "…개의 경고가 있어요"
+   "rule": "negative",
+   "file": "src/screens/MainPageComponents/TicketBookComponents/MakeTicket.tsx",
+   "line": 1017,
+   "text": "검색 결과가 없어요",
+   "fix": null
+  },
+  {
+   "rule": "negative",
+   "file": "src/screens/MainPageComponents/TicketBookComponents/SearchTicketBooks.tsx",
+   "line": 100,
+   "text": "'…'에 맞는 결과가 없어요",
+   "fix": null
   },
   {
    "rule": "negative",
    "file": "src/screens/MainPageComponents/TicketBookComponents/ShowTickets.tsx",
-   "line": 618,
+   "line": 547,
    "text": "iOS 시뮬레이터 제약으로 파일 선택 불가 실제 디바이스에서 테스트하세요",
    "fix": null
   },
   {
-   "rule": "haeyo",
-   "file": "src/screens/MainPageComponents/TicketBookComponents/ShowTickets.tsx",
-   "line": 639,
-   "text": "등록할 티켓이 없습니다",
-   "fix": "등록할 티켓이 없어요"
-  },
-  {
    "rule": "negative",
    "file": "src/screens/MainPageComponents/TicketBookComponents/ShowTickets.tsx",
-   "line": 639,
-   "text": "등록할 티켓이 없습니다",
+   "line": 937,
+   "text": "삭제하면 티켓을 되돌릴 수 없어요.",
    "fix": null
-  },
-  {
-   "rule": "honorific",
-   "file": "src/screens/MainPageComponents/TicketBookComponents/ShowTickets.tsx",
-   "line": 1082,
-   "text": "잠깐! 삭제된 티켓은 복구되지 않아요. 정말 삭제하시겠어요?",
-   "fix": "잠깐! 삭제된 티켓은 복구되지 않아요. 정말 삭제할까요?"
-  },
-  {
-   "rule": "dialog-cancel",
-   "file": "src/screens/MainPageComponents/TicketBookComponents/ShowTickets.tsx",
-   "line": 1091,
-   "text": "취소",
-   "fix": "닫기"
-  },
-  {
-   "rule": "haeyo",
-   "file": "src/screens/MainPageComponents/TicketBookComponents/ShowTickets.tsx",
-   "line": 1100,
-   "text": "선택하신 티켓 이미지를 기본 포스터로 변경합니다",
-   "fix": "선택하신 티켓 이미지를 기본 포스터로 변경해요"
-  },
-  {
-   "rule": "dialog-cancel",
-   "file": "src/screens/MainPageComponents/TicketBookComponents/ShowTickets.tsx",
-   "line": 1109,
-   "text": "취소",
-   "fix": "닫기"
-  },
-  {
-   "rule": "dialog-cancel",
-   "file": "src/screens/MainPageComponents/TicketBookComponents/ShowTickets.tsx",
-   "line": 1127,
-   "text": "취소",
-   "fix": "닫기"
-  },
-  {
-   "rule": "dialog-cancel",
-   "file": "src/screens/MainPageComponents/TicketBookComponents/ShowTickets.tsx",
-   "line": 1178,
-   "text": "취소",
-   "fix": "닫기"
-  },
-  {
-   "rule": "negative",
-   "file": "src/screens/MainPageComponents/TicketBookComponents/TicketBookForm.tsx",
-   "line": 97,
-   "text": "제목 사용 불가",
-   "fix": null
-  },
-  {
-   "rule": "haeyo",
-   "file": "src/screens/MainPageComponents/TicketBookComponents/TicketBookForm.tsx",
-   "line": 97,
-   "text": "해당 제목은 사용이 불가능합니다.",
-   "fix": "해당 제목은 사용이 불가능해요."
-  },
-  {
-   "rule": "negative",
-   "file": "src/screens/MainPageComponents/TicketBookComponents/TicketBookForm.tsx",
-   "line": 97,
-   "text": "해당 제목은 사용이 불가능합니다.",
-   "fix": null
-  },
-  {
-   "rule": "negative",
-   "file": "src/screens/MainPageComponents/TicketBookComponents/TicketBookForm.tsx",
-   "line": 104,
-   "text": "제목 사용 불가",
-   "fix": null
-  },
-  {
-   "rule": "haeyo",
-   "file": "src/screens/MainPageComponents/TicketBookComponents/TicketBookForm.tsx",
-   "line": 104,
-   "text": "중복된 제목은 사용이 불가능합니다.",
-   "fix": "중복된 제목은 사용이 불가능해요."
-  },
-  {
-   "rule": "negative",
-   "file": "src/screens/MainPageComponents/TicketBookComponents/TicketBookForm.tsx",
-   "line": 104,
-   "text": "중복된 제목은 사용이 불가능합니다.",
-   "fix": null
-  },
-  {
-   "rule": "passive",
-   "file": "src/screens/MainPageComponents/TicketBookComponents/TicketBookForm.tsx",
-   "line": 241,
-   "text": "새로운 티켓북이 생성되었어요!",
-   "fix": "새로운 티켓북을 만들었어요!"
-  },
-  {
-   "rule": "dialog-cancel",
-   "file": "src/screens/MainPageComponents/TicketBookComponents/ticketBookShared.tsx",
-   "line": 124,
-   "text": "취소",
-   "fix": "닫기"
-  },
-  {
-   "rule": "dialog-cancel",
-   "file": "src/screens/MainPageComponents/TicketBookComponents/ticketBookShared.tsx",
-   "line": 224,
-   "text": "취소",
-   "fix": "닫기"
-  },
-  {
-   "rule": "haeyo",
-   "file": "src/services/NotificationService.ts",
-   "line": 382,
-   "text": "… 티켓이 곧 오픈됩니다!",
-   "fix": "… 티켓이 곧 오픈돼요!"
-  },
-  {
-   "rule": "honorific",
-   "file": "src/services/NotificationService.ts",
-   "line": 414,
-   "text": "… 공연은 어떠셨나요? 리뷰를 남겨주세요!",
-   "fix": "… 공연은 어떠셨나요? 리뷰를 남겨주세요!"
-  },
-  {
-   "rule": "haeyo",
-   "file": "src/utils/csvParser.ts",
-   "line": 148,
-   "text": "공연명이 없습니다",
-   "fix": "공연명이 없어요"
-  },
-  {
-   "rule": "negative",
-   "file": "src/utils/csvParser.ts",
-   "line": 148,
-   "text": "공연명이 없습니다",
-   "fix": null
-  },
-  {
-   "rule": "haeyo",
-   "file": "src/utils/csvParser.ts",
-   "line": 151,
-   "text": "공연 타입이 없습니다",
-   "fix": "공연 타입이 없어요"
-  },
-  {
-   "rule": "negative",
-   "file": "src/utils/csvParser.ts",
-   "line": 151,
-   "text": "공연 타입이 없습니다",
-   "fix": null
-  },
-  {
-   "rule": "haeyo",
-   "file": "src/utils/csvParser.ts",
-   "line": 153,
-   "text": "공연 타입은 \"뮤지컬\" 또는 \"연극\"이어야 합니다",
-   "fix": "공연 타입은 \"뮤지컬\" 또는 \"연극\"이어야 해요"
-  },
-  {
-   "rule": "haeyo",
-   "file": "src/utils/csvParser.ts",
-   "line": 156,
-   "text": "관람일이 없습니다",
-   "fix": "관람일이 없어요"
-  },
-  {
-   "rule": "negative",
-   "file": "src/utils/csvParser.ts",
-   "line": 156,
-   "text": "관람일이 없습니다",
-   "fix": null
-  },
-  {
-   "rule": "haeyo",
-   "file": "src/utils/csvParser.ts",
-   "line": 158,
-   "text": "관람일 형식이 올바르지 않습니다 (예: 2025.01.15)",
-   "fix": "관람일 형식이 올바르지 않아요 (예: 2025.01.15)"
-  },
-  {
-   "rule": "haeyo",
-   "file": "src/utils/csvParser.ts",
-   "line": 161,
-   "text": "공연장 정보가 없습니다",
-   "fix": "공연장 정보가 없어요"
-  },
-  {
-   "rule": "negative",
-   "file": "src/utils/csvParser.ts",
-   "line": 161,
-   "text": "공연장 정보가 없습니다",
-   "fix": null
-  },
-  {
-   "rule": "haeyo",
-   "file": "src/utils/csvParser.ts",
-   "line": 174,
-   "text": "시간 형식이 올바르지 않습니다 (예: 14:00)",
-   "fix": "시간 형식이 올바르지 않아요 (예: 14:00)"
   }
  ]
 }
